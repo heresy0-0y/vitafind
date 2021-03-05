@@ -2,4 +2,4 @@
 
 ## ERD
 
-![MVP ERD](./Untitled Diagram.png)
+![MVP ERD](Untitled Diagram.png)
