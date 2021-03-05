@@ -18,27 +18,19 @@
 
 <br>
 
+## **VitaFind**
+
 ## Overview
 
-_**Project Title** is lorem ipsum dolor sit amet. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
-
-
-<br>
-
-## MVP
-
-> The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
-
-_The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
-
+A platform for folks to store their favorite supplement regimens, to make comparing prices, and nutritional value, easier than ever.
 <br>
 
 ### Goals
 
-- _Lorem ipsum, dolor sit amet,_
-- _consectetur adipiscing elit._
-- _Phasellus dapibus fermentum risus vitae bibendum._
-- _Integer vel ipsum mollis odio sollicitudin ornare eu vel ex._
+- _Implement a back-end utilizing Ruby and Rails_
+- _Style using Styled Components_
+- _A join table for vitamins and supplements_
+- _Full CRUD for adding supplements to the app (front- and back-end)_
 - _etc._
 
 <br>
@@ -89,9 +81,7 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 #### Component Tree
 
-> Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. Include a link to your component tree
-
-[Component Tree Sample](https://gist.git.generalassemb.ly/davidtwhitlatch/414107e2560ae0bb65e233570f2fe056#file-component-tree-png)
+<iframe style="border:none" width="800" height="450" src="https://whimsical.com/embed/TCfkYy1herjwHKn5vxdyxk"></iframe>
 
 #### Component Hierarchy
 
@@ -137,7 +127,10 @@ src
 
 ## Post-MVP
 
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
+- [ ] add users to back-end
+- [ ] add collections to back-end, associate with users (many-to-one)
+- [ ] add tags to back-end, associate with collections (many-to-many)
+- [ ] add saves and favorites to back-end, associate with collections and users (many-to-many, many-to-one)
 
 ***
 
