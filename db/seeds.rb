@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Brand.destroy_all
+Supplement.destroy_all
+Vitamin.destroy_all
+
+Brand.create([{name: 'Hum', about_url: 'https://www.humnutrition.com', logo_url: 'https://cdn.humnutrition.com/v2/v1.108.8/13722bffcdd726c6a3db261c3fd5662a.svg'}, {name: 'Garden of Life', logo_url: 'https://www.gardenoflife.com/media/logo/stores/1/logo-01-min.png', about_url: 'https://www.gardenoflife.com/why-gol'}, {name: 'Ancient Nutrition', about_url: 'https://www.ancientnutrition.com/about', logo_url: 'https://www.ancientnutrition.com/wp-content/uploads/2019/01/Ancient-Nutrition-logo-white.svg'}])
+

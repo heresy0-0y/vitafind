@@ -10,7 +10,7 @@ class SupplementsController < ApplicationController
 
   # GET /supplements/1
   def show
-    render json: @supplement
+    render json: @supplement, include: :vitamins
   end
 
   # POST /supplements
