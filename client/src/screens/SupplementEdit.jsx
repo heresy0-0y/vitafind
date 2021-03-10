@@ -8,8 +8,16 @@ export default function SuplementEdit(props) {
     nutrition_label_url: "",
     price: "",
     retail_url: "",
+    brand_id: "",
   });
-  const { name } = formData;
+  const {
+    name,
+    image_url,
+    nutrition_label_url,
+    price,
+    retail_url,
+    brand_id,
+  } = formData;
   const { supplements, handleUpdate } = props;
   const { id } = useParams();
 
@@ -43,7 +51,7 @@ export default function SuplementEdit(props) {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        handleUpdate(formData);
+        handleUpdate(id, formData);
       }}
     >
       <h3>Edit Supplement</h3>
@@ -57,7 +65,7 @@ export default function SuplementEdit(props) {
         <input
           type="number"
           name="price"
-          value={name}
+          value={price}
           onChange={handleChange}
         />
       </label>
@@ -67,7 +75,7 @@ export default function SuplementEdit(props) {
         <input
           type="text"
           name="image_url"
-          value={name}
+          value={image_url}
           onChange={handleChange}
         />
       </label>
@@ -77,7 +85,7 @@ export default function SuplementEdit(props) {
         <input
           type="text"
           name="nutrition_label_url"
-          value={name}
+          value={nutrition_label_url}
           onChange={handleChange}
         />
       </label>
@@ -87,7 +95,7 @@ export default function SuplementEdit(props) {
         <input
           type="text"
           name="retail_url"
-          value={name}
+          value={retail_url}
           onChange={handleChange}
         />
       </label>

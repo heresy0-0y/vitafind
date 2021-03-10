@@ -31,6 +31,7 @@ export default function SupplementDetail(props) {
   return (
     <div>
       <h3>{supplementItem?.name}</h3>
+      <h2>{supplementItem?.price}</h2>
       {supplementItem?.vitamins.map((vitamin) => (
         <p key={vitamin.id}>{vitamin.name}</p>
       ))}

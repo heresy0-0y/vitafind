@@ -71,17 +71,26 @@ export default function MainContainer(props) {
 
   return (
     <Switch>
-      <Route path="/supplements/new">
-        <SupplementCreate handleCreate={handleCreate} />
+      <Route path="/supplement/new">
+        <SupplementCreate handleCreate={handleCreate} brands={brands} />
       </Route>
-      <Route path="/supplements/:id/edit">
-        <SupplementEdit supplements={supplements} handleUpdate={handleUpdate} />
+      <Route path="/supplement/:id/edit">
+        <SupplementEdit
+          supplements={supplements}
+          handleUpdate={handleUpdate}
+          brands={brands}
+        />
       </Route>
-      <Route path="/supplements/:id">
-        <SupplementDetail vitamins={vitamins} />
+      <Route path="/supplement/:id">
+        <SupplementDetail vitamins={vitamins} brands={brands} />
       </Route>
-      <Route path="/supplements">
-        <Supplements supplements={supplements} handleDelete={handleDelete} />
+      {/* change route back to /supplements when theres a home/landing page */}
+      <Route path="/">
+        <Supplements
+          supplements={supplements}
+          handleDelete={handleDelete}
+          brands={brands}
+        />
       </Route>
       <Route path="/vitamins">
         <Vitamins vitamins={vitamins} />

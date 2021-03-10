@@ -14,7 +14,7 @@ export default function Supplements(props) {
           </Link>
           {
             <>
-              <Link to={`/supplements/${supplement.id}/edit`}>
+              <Link to={`/supplement/${supplement.id}/edit`}>
                 <button>edit</button>
               </Link>
               <button onClick={() => handleDelete(supplement.id)}>

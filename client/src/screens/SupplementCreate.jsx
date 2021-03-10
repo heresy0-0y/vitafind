@@ -7,9 +7,17 @@ export default function SuplementCreate(props) {
     nutrition_label_url: "",
     price: "",
     retail_url: "",
+    brand_id: "",
   });
-  const { name } = formData;
-  const { handleCreate } = props;
+  const {
+    name,
+    image_url,
+    nutrition_label_url,
+    price,
+    retail_url,
+    brand_id,
+  } = formData;
+  const { handleCreate, brands } = props;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,11 +41,25 @@ export default function SuplementCreate(props) {
       </label>
       <br />
       <label>
+        Brand:
+        <select defaultValue="default" name="brand_id" onChange={handleChange}>
+          <option value="default" disabled="true">
+            --Select a Brand--
+          </option>
+          {brands.map((brand) => (
+            <option value={brand.id} key={brand.id}>
+              {brand.name}
+            </option>
+          ))}
+        </select>
+      </label>
+      <br />
+      <label>
         Price:
         <input
           type="number"
           name="price"
-          value={name}
+          value={price}
           onChange={handleChange}
         />
       </label>
@@ -47,7 +69,7 @@ export default function SuplementCreate(props) {
         <input
           type="text"
           name="image_url"
-          value={name}
+          value={image_url}
           onChange={handleChange}
         />
       </label>
@@ -57,7 +79,7 @@ export default function SuplementCreate(props) {
         <input
           type="text"
           name="nutrition_label_url"
-          value={name}
+          value={nutrition_label_url}
           onChange={handleChange}
         />
       </label>
@@ -67,7 +89,7 @@ export default function SuplementCreate(props) {
         <input
           type="text"
           name="retail_url"
-          value={name}
+          value={retail_url}
           onChange={handleChange}
         />
       </label>
