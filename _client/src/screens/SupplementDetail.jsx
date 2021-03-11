@@ -9,6 +9,7 @@ export default function SupplementDetail(props) {
     name: "",
     weight: "",
   });
+  const { name, weight } = formData;
   const { id } = useParams();
   const { vitamins } = props;
 
@@ -42,26 +43,30 @@ export default function SupplementDetail(props) {
         <p key={vitamin.id}>{vitamin.name}</p>
       ))}
       <form onSubmit={handleSubmit}>
-        <select defaultValue="default" onChange={handleChange}>
+        <select
+          defaultValue="default"
+          name="name"
+          value={name}
+          onChange={handleChange}
+        >
           <option value="default" dsabled>
             --Select a Vitamin--
           </option>
           {vitamins.map((vitamin) => (
-            <option value={vitamin.id} key={vitamin.id}>
+            <option value={vitamin.name} key={vitamin.id}>
               {vitamin.name}
             </option>
           ))}
-          <label htmlFor="amount per serving, milligrams">
-            Amount per serving (in milligrams):
-            <input
-              onChange={handleChange}
-              type="number"
-              name="weight"
-              value={weight}
-              onChange={handleChange}
-            />
-          </label>
         </select>
+        <label htmlFor="amount per serving, milligrams">
+          Amount per serving (in milligrams):
+          <input
+            onChange={handleChange}
+            type="number"
+            name="weight"
+            value={weight}
+          />
+        </label>
         <button>add</button>
       </form>
     </div>

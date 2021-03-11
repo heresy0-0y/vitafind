@@ -13,6 +13,6 @@ d
   private
 
   def vitamin_params
-    params.requi re(:vitamin).permit(:name, :weight)
+    params.require(:vitamin).permit(:name, :weight)
   end
 end
