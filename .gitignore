@@ -25,3 +25,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+/client/node_modules
+/client/package-lock.json
+/Gemfile.lock

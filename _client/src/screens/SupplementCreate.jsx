@@ -42,7 +42,12 @@ export default function SuplementCreate(props) {
       <br />
       <label>
         Brand:
-        <select defaultValue="default" name="brand_id" onChange={handleChange}>
+        <select
+          defaultValue="default"
+          value={brand_id}
+          name="brand_id"
+          onChange={handleChange}
+        >
           <option value="default" disabled="true">
             --Select a Brand--
           </option>

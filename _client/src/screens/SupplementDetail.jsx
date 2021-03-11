@@ -5,7 +5,10 @@ import { addSupplementToVitamin } from "../services/vitaminsSupplements";
 
 export default function SupplementDetail(props) {
   const [supplementItem, setSupplementItem] = useState(null);
-  const [selectedVitamin, setSelectedVitamin] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    weight: "",
+  });
   const { id } = useParams();
   const { vitamins } = props;
 
@@ -18,13 +21,16 @@ export default function SupplementDetail(props) {
   }, [id]);
 
   const handleChange = (e) => {
-    const { value } = e.target;
-    setSelectedVitamin(value);
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const supplementData = await addSupplementToVitamin(selectedVitamin, id);
+    const supplementData = await addSupplementToVitamin(formData, id);
     setSupplementItem(supplementData);
   };
 
@@ -45,6 +51,16 @@ export default function SupplementDetail(props) {
               {vitamin.name}
             </option>
           ))}
+          <label htmlFor="amount per serving, milligrams">
+            Amount per serving (in milligrams):
+            <input
+              onChange={handleChange}
+              type="number"
+              name="weight"
+              value={weight}
+              onChange={handleChange}
+            />
+          </label>
         </select>
         <button>add</button>
       </form>
