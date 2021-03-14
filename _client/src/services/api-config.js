@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "https://vitafind-db.herokuapp.com/";
+const baseUrl = "https://vitafind.herokuapp.com/";
 // process.env.NODE_ENV === "production" ?
 // : "http://localhost:3000";
 

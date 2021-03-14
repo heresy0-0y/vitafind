@@ -1,6 +1,17 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import React from "react";
 
-export default styled.Link`
-  text-decoration: none;
-`;
+import { StyledLink, LinkContainer } from "./VitaLink.elements";
+
+const VitaLink = (props) => {
+  return (
+    <>
+      <LinkContainer>
+        <StyledLink>
+          {props.children}
+        </StyledLink>
+      </LinkContainer>
+    </>
+  );
+};
+
+export default VitaLink

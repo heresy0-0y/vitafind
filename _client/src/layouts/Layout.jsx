@@ -1,9 +1,8 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { Link } from "react-router-dom";
-// import Wrapper from "../components/Wrapper/Wrapper";
+
 import MyButton from "../components/MyButton";
-import { Wrapper } from "../components";
+import { Wrapper, VitaLink} from "../components";
 
 export default function Layout(props) {
   const { currentUser, handleLogout } = props;
@@ -12,23 +11,23 @@ export default function Layout(props) {
     <Wrapper>
       <div className="App">
         <header>
-          <Link to="/">
+          <VitaLink to="/">
             <h1>VITAFINDA</h1>
-          </Link>
+          </VitaLink>
           {currentUser ? (
             <>
               <p>{currentUser.username}</p>
               <MyButton onClick={handleLogout}>Logout</MyButton>
             </>
           ) : (
-            <Link to="/login">Login/Register</Link>
+            <VitaLink to="/login">Login/Register</VitaLink>
           )}
           <hr />
           {currentUser && (
             <>
-              <Link to="/supplements">Supplements</Link>
-              <Link to="/vitamins">Vitamins</Link>
-              <Link to="/brands">Brands</Link>
+              <VitaLink to="/supplements">Supplements</VitaLink>
+              <VitaLink to="/vitamins">Vitamins</VitaLink>
+              <VitaLink to="/brands">Brands</VitaLink>
               <hr />
             </>
           )}

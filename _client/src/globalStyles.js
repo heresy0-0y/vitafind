@@ -5,7 +5,8 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Droid Sans Mono'
+  font-family: 'Droid Sans Mono';
+  color: 'seagreen';
 }`;
 
 export const Container = styled.div`

@@ -14,6 +14,7 @@ export const Wrap = styled.div`
 export const WrapContainer = styled(Container)`
   display: flex;
   justify-content: space-between;
-  height: 100% ${Container};
+  height: 100%;
   box-shadow: 1px 1px 2px;
+  ${Container};
 `;
