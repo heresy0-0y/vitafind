@@ -7,7 +7,7 @@ import {
   putSupplement,
 } from "../services/supplements";
 import { addSupplementToVitamin } from "../services/vitaminsSupplements";
-import { getVitamins } from "../services/vitamins";
+import { getVitamins, postVitamin } from "../services/vitamins";
 import { getBrands } from "../services/brands";
 import Supplements from "../screens/Supplements";
 import Vitamins from "../screens/Vitamins";

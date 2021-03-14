@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getSupplement } from "../services/supplements";
-import { addSupplementToVitamin } from "../services/vitaminsSupplements";
 
 export default function SupplementDetail(props) {
   const [supplementItem, setSupplementItem] = useState(null);
