@@ -5,13 +5,13 @@ import { addSupplementToVitamin } from "../services/vitaminsSupplements";
 
 export default function SupplementDetail(props) {
   const [supplementItem, setSupplementItem] = useState(null);
-  const [formData, setFormData] = useState({
+  const [vitamin, setVitamin] = useState({
     name: "",
     weight: "",
   });
-  const { name, weight } = formData;
+  const { name, weight } = vitamin;
   const { id } = useParams();
-  const { vitamins } = props;
+  const { vitamins, addVitaServing } = props;
 
   useEffect(() => {
     const fetchSupplementItem = async () => {
@@ -23,7 +23,7 @@ export default function SupplementDetail(props) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevState) => ({
+    setVitamin((prevState) => ({
       ...prevState,
       [name]: value,
     }));
@@ -31,8 +31,7 @@ export default function SupplementDetail(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const supplementData = await addSupplementToVitamin(formData, id);
-    setSupplementItem(supplementData);
+    addVitaServing(id, vitamin);
   };
 
   return (

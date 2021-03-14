@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import MyButton from "../components/MyButton";
 
 export default function Supplements(props) {
   const { supplements, handleDelete } = props;
@@ -15,18 +16,18 @@ export default function Supplements(props) {
           {
             <>
               <Link to={`/supplement/${supplement.id}/edit`}>
-                <button>edit</button>
+                <MyButton>edit</MyButton>
               </Link>
-              <button onClick={() => handleDelete(supplement.id)}>
+              <MyButton onClick={() => handleDelete(supplement.id)}>
                 delete
-              </button>
+              </MyButton>
             </>
           }
         </React.Fragment>
       ))}
       <br />
       <Link to="/supplement/new">
-        <button>Create</button>
+        <MyButton>Create</MyButton>
       </Link>
     </div>
   );

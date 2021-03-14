@@ -1,18 +1,11 @@
 class VitaminSupplementsController < ApplicationController
-  before_action :set_vitamin
 
   def add_vitamin_to_supplement
     @supplement = Supplement.find(params[:id])
-    @vitamin = Vitamin.create(vitamin_params)
-d
+    @vitamin = Vitamin.find(params[:vitamin_id])
+
     @supplement.vitamins << @vitamin
 
-    render json: @vitamin, include: :vitamins
-  end
-
-  private
-
-  def vitamin_params
-    params.require(:vitamin).permit(:name, :weight)
+    render json: @supplement, include: :vitamins
   end
 end

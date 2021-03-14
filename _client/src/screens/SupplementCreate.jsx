@@ -1,4 +1,5 @@
 import { useState } from "react";
+import MyButton from "../components/MyButton";
 
 export default function SuplementCreate(props) {
   const [formData, setFormData] = useState({
@@ -99,7 +100,7 @@ export default function SuplementCreate(props) {
         />
       </label>
       <br />
-      <button>Submit</button>
+      <MyButton>Submit</MyButton>
     </form>
   );
 }

@@ -6,13 +6,12 @@ import {
   postSupplement,
   putSupplement,
 } from "../services/supplements";
-import { addSupplementToVitamin } from "../services/vitaminsSupplements";
 import { getVitamins } from "../services/vitamins";
 import { getBrands } from "../services/brands";
+import { addSupplementToVitamin } from "../services/vitaminsSupplements";
 import Supplements from "../screens/Supplements";
 import Vitamins from "../screens/Vitamins";
 import Brands from "../screens/Brands";
-// import MyButton from "../components/MyButton";
 import SupplementCreate from "../screens/SupplementCreate";
 import SupplementEdit from "../screens/SupplementEdit";
 import SupplementDetail from "../screens/SupplementDetail";
@@ -71,10 +70,8 @@ export default function MainContainer(props) {
     history.push("/supplements");
   };
 
-  const addVitaServing = async (id, vitamin) => {
-    const vitaminData = await addSupplementToVitamin(id, vitamin);
-    setVitamins((prevState) => [...prevState, vitaminData]);
-    history.push(`/supplement/${id}`);
+  const handleJoin = async (id, formData) => {
+    const joinedSupplement = await addSupplementToVitamin(supplementId);
   };
 
   return (
@@ -90,11 +87,7 @@ export default function MainContainer(props) {
         />
       </Route>
       <Route path="/supplement/:id">
-        <SupplementDetail
-          vitamins={vitamins}
-          brands={brands}
-          addVitaServing={addVitaServing}
-        />
+        <SupplementDetail vitamins={vitamins} brands={brands} />
       </Route>
       {/* change route back to /supplements when theres a home/landing page */}
       <Route path="/">
