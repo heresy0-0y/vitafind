@@ -6,7 +6,7 @@ import {
   postSupplement,
   putSupplement,
 } from "../services/supplements";
-import { addSupplementToVitamin } from "../services/vitaminsSupplements";
+import { addVitaminToSupplement } from "../services/vitaminsSupplements";
 import { getVitamins, postVitamin } from "../services/vitamins";
 import { getBrands } from "../services/brands";
 import Supplements from "../screens/Supplements";
@@ -71,9 +71,10 @@ export default function MainContainer(props) {
     history.push("/supplements");
   };
 
-  const addVitaServing = async (id, vitamin) => {
-    const vitaminData = await addSupplementToVitamin(id, vitamin);
-    setVitamins((prevState) => [...prevState, vitaminData]);
+  const addVitaServing = async (id, vitaminData) => {
+    const vitamin = await postVitamin(vitaminData)
+    await addVitaminToSupplement(id, vitamin.id);
+    setVitamins((prevState) => [...prevState, vitamin]);
     history.push(`/supplement/${id}`);
   };
 
