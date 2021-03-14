@@ -28,4 +28,4 @@
 
 /client/node_modules
 /client/package-lock.json
-/Gemfile.lock
+# Gemfile.lock
